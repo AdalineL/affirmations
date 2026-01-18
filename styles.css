@@ -45,6 +45,24 @@ body {
   position: relative;
 }
 
+.pot::before,
+.pot::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 4px;
+  background-color: #ffb6c1;
+  border-radius: 50%;
+  top: 20px;
+}
+
+.pot::before {
+  left: 12px;
+}
+.pot::after {
+  right: 12px;
+}
+
 .eyes {
   position: absolute;
   top: 10px;
@@ -98,12 +116,14 @@ body {
   width: 25px;
   height: 12px;
   background-color: #00b894;
+
   border-radius: 50% / 50%;
 
   transform: translateX(-50%) rotate(0deg);
   transform-origin: right center;
 
   animation: leaf-sway-left 2s ease-in-out infinite alternate;
+  animation-duration: 2.5s;
 }
 
 .second-leaf {
