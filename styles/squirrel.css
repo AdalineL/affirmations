@@ -5,7 +5,7 @@
   display: flex;
   align-items: flex-end;
   transform-origin: center center;
-  animation: move 12s linear infinite;
+  animation: move 18s linear infinite;
   z-index: 3;
 }
 
