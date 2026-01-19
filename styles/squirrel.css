@@ -1,0 +1,175 @@
+.squirrel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  transform-origin: center center;
+  animation: move 12s linear infinite;
+  z-index: 3;
+}
+
+.tail {
+  position: relative;
+  width: 160px;
+  height: 320px;
+
+  right: -10px;
+  bottom: 15px;
+  transform: scale(0.2);
+  transform-origin: bottom right;
+}
+
+.tail-stem {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 320px;
+  background: #d2691e;
+  border-radius: 0 0 0 110px;
+}
+
+.tail-cap {
+  position: absolute;
+  top: -150px;
+  left: -140px;
+  width: 300px;
+  height: 300px;
+  background: #d2691e;
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+
+.body {
+  width: 60px;
+  height: 40px;
+  background: #d2691e;
+  border-radius: 40% 40% 50% 50%;
+  position: relative;
+  margin: 0 5px;
+  animation: bodyBounce 0.8s infinite alternate;
+}
+
+.leg {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  background: #d2691e;
+  border-radius: 50%;
+  bottom: -5px;
+  animation: legs 0.8s infinite alternate;
+}
+
+.leg-left {
+  left: 5px;
+}
+.leg-right {
+  right: 5px;
+  animation-name: legsRight;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  top: -11px;
+  background: #d2691e;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ear {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #d2691e;
+  border-radius: 50%;
+  top: -5px;
+}
+
+.ear-left {
+  left: 5px;
+}
+.ear-right {
+  right: 5px;
+}
+
+.squirrel-eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
+  top: 12px;
+  right: 8px;
+  animation: blink 4s infinite;
+}
+
+.nose {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
+  top: 24px;
+  right: -1px;
+}
+
+@keyframes legs {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes legsRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bodyBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  49.9% {
+    left: calc(100vw - 120px);
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  50.1% {
+    left: calc(100vw - 120px);
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+}

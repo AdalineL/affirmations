@@ -66,4 +66,36 @@ function nextAffirmation() {
 
 showAffirmation(affirmations[Math.floor(Math.random() * affirmations.length)]);
 
-setInterval(nextAffirmation, 6000);
+const colors = [
+  "#3cb371",
+  "#61c48eff",
+  "#1f9f59ff",
+  "#7db194ff",
+  "#2c8755ff",
+  "#9ad6b5ff",
+];
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function getRandomRotation(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+window.onload = () => {
+  const leaves = document.querySelectorAll(".leaf");
+
+  leaves.forEach((leaf) => {
+    const randomLeft = Math.random() * 100;
+    const randomTop = -30 + Math.random() * 20;
+    const randomDelay = Math.random() * 5;
+
+    leaf.style.backgroundColor = getRandomColor();
+    const randomRotation = getRandomRotation(-20, 20);
+    leaf.style.transform = `rotate(${randomRotation}deg)`;
+    leaf.style.left = `${randomLeft}%`;
+    leaf.style.top = `${randomTop}px`;
+    leaf.style.animationDelay = `${randomDelay}s`;
+  });
+};
